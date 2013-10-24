@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+- 1.9.3
+- 2.0.0
+- rbx-19mode
+- ruby-head
+env:
+  global:
+  - secure: G4j3gaAkyJvTK4spfRaraF8u8B9MwXwpmPGO0VyLJawJlX8xsjvBG3Xl4MrMTkSw3ieV/+B3S4eq/EGGe6lO8ZqxqrSKIDXlGinZK9Z9K9+umOdPUOsu9jx49i5IMrJX7g5/n63L/9rKgoefpSeyOF2KLrImseu10xLWs5MYv/s=
+  - secure: g3rD71ivDVfKya1NGGfUswZbk4kurHfyVLmZ3jAU1UEnkBF+rW8OGhhm34hIsKDTawEDTzkQao5Ek8YeQIvLT4WIsXWagbXPE/v4oq3ohDUoMndnrQywlG+msuNB9zIxCD1SAzeb88Lh4MGJPnod8cmtKVhmUjzhVKRL86QHRxE=

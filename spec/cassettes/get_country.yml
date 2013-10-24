@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geoip.maxmind.com/geoip/v2.0/country/62.219.147.28
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Authorization:
+      - Basic ODE5MDI6aEJ0MnhXbGRjQUF0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - Accept
+      Content-Length:
+      - '660'
+      Content-Type:
+      - application/vnd.maxmind.com-country+json; charset=UTF-8; version=2.0
+      Date:
+      - Thu, 24 Oct 2013 06:56:44 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb3VudHJ5Ijp7Imlzb19jb2RlIjoiSUwiLCJuYW1lcyI6eyJwdC1CUiI6
+        IklzcmFlbCIsImVzIjoiSXNyYWVsIiwicnUiOiLQmNC30YDQsNC40LvRjCIs
+        ImVuIjoiSXNyYWVsIiwiemgtQ04iOiLku6XoibLliJciLCJmciI6IklzcmHD
+        q2wiLCJkZSI6IklzcmFlbCIsImphIjoi44Kk44K544Op44Ko44Or5Zu9In0s
+        Imdlb25hbWVfaWQiOjI5NDY0MH0sImNvbnRpbmVudCI6eyJuYW1lcyI6eyJw
+        dC1CUiI6IsOBc2lhIiwiZXMiOiJBc2lhIiwicnUiOiLQkNC30LjRjyIsImVu
+        IjoiQXNpYSIsInpoLUNOIjoi5Lqa5rSyIiwiZnIiOiJBc2llIiwiZGUiOiJB
+        c2llbiIsImphIjoi44Ki44K444KiIn0sImdlb25hbWVfaWQiOjYyNTUxNDcs
+        ImNvZGUiOiJBUyJ9LCJtYXhtaW5kIjp7InF1ZXJpZXNfcmVtYWluaW5nIjo5
+        OTV9LCJyZWdpc3RlcmVkX2NvdW50cnkiOnsiaXNvX2NvZGUiOiJJTCIsIm5h
+        bWVzIjp7InB0LUJSIjoiSXNyYWVsIiwiZXMiOiJJc3JhZWwiLCJydSI6ItCY
+        0LfRgNCw0LjQu9GMIiwiZW4iOiJJc3JhZWwiLCJ6aC1DTiI6IuS7peiJsuWI
+        lyIsImZyIjoiSXNyYcOrbCIsImRlIjoiSXNyYWVsIiwiamEiOiLjgqTjgrnj
+        g6njgqjjg6vlm70ifSwiZ2VvbmFtZV9pZCI6Mjk0NjQwfSwidHJhaXRzIjp7
+        ImlwX2FkZHJlc3MiOiI2Mi4yMTkuMTQ3LjI4In19
+    http_version: 
+  recorded_at: Thu, 24 Oct 2013 06:56:47 GMT
+recorded_with: VCR 2.6.0
