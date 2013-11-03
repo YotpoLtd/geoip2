@@ -6,6 +6,8 @@ Integration with MaxMind GeoIP2 API
 
 [![Build Status](https://travis-ci.org/YotpoLtd/geoip2.png?branch=master)](https://travis-ci.org/YotpoLtd/geoip2)
 [![Coverage Status](https://coveralls.io/repos/YotpoLtd/geoip2/badge.png)](https://coveralls.io/r/YotpoLtd/geoip2)
+[![Dependency Status](https://gemnasium.com/YotpoLtd/geoip2.png)](https://gemnasium.com/YotpoLtd/geoip2)
+[![Code Climate](https://codeclimate.com/github/YotpoLtd/geoip2.png)](https://codeclimate.com/github/YotpoLtd/geoip2)
 
 ## Installation
 
