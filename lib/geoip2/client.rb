@@ -36,7 +36,10 @@ module Geoip2
     def get(url, params = {})
       params = params.inject({}){|memo,(k,v)| memo[k.to_s] = v; memo}
       preform(@base_path + url, :get, params: params) do
-        return connection.get(@base_path + url, params).body
+        return connection.get(@base_path + url, params) do |req| 
+            req.options.timeout = 1
+            req.options.open_timeout = 1
+        end.body
       end
     end
 
