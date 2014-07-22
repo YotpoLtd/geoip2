@@ -3,8 +3,7 @@ rvm:
 - 1.9.3
 - 2.0.0
 - 2.1.1
-- rbx
-- ruby-head
+- rbx-2
 env:
   global:
   - secure: G4j3gaAkyJvTK4spfRaraF8u8B9MwXwpmPGO0VyLJawJlX8xsjvBG3Xl4MrMTkSw3ieV/+B3S4eq/EGGe6lO8ZqxqrSKIDXlGinZK9Z9K9+umOdPUOsu9jx49i5IMrJX7g5/n63L/9rKgoefpSeyOF2KLrImseu10xLWs5MYv/s=
