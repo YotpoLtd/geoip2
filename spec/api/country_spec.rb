@@ -8,7 +8,7 @@ describe Geoip2::Api::Country do
       end
     end
     subject { @response }
-    it { should be_a ::Hashie::Rash }
+    it { should be_a ::Hashie::Mash }
     it { should respond_to :country }
     it { should respond_to :continent }
     it { should respond_to :registered_country }
@@ -22,7 +22,7 @@ describe Geoip2::Api::Country do
 
     it /has a names array in country/ do
       expect(subject.country).to include :names
-      expect(subject.country.names).to be_a ::Hashie::Rash
+      expect(subject.country.names).to be_a ::Hashie::Mash
     end
 
     it /has a 'en' name and it's value should be Israel/ do
