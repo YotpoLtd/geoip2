@@ -2,6 +2,7 @@ require 'geoip2/api/city'
 require 'geoip2/api/city_isp_org'
 require 'geoip2/api/country'
 require 'geoip2/api/omni'
+require 'geoip2/api/insights'
 require 'active_support/notifications'
 require 'faraday'
 require 'typhoeus'
@@ -11,9 +12,10 @@ require 'faraday_middleware'
 module Geoip2
   class Client
 
-    include Geoip2::Api::City
-    include Geoip2::Api::Country
     include Geoip2::Api::CityIspOrg
+    include Geoip2::Api::Insights
+    include Geoip2::Api::Country
+    include Geoip2::Api::City
     include Geoip2::Api::Omni
 
     #
