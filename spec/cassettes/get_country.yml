@@ -44,4 +44,33 @@ http_interactions:
         ImlwX2FkZHJlc3MiOiI2Mi4yMTkuMTQ3LjI4In19
     http_version: 
   recorded_at: Thu, 24 Oct 2013 06:56:47 GMT
-recorded_with: VCR 2.6.0
+- request:
+    method: get
+    uri: https://geoip.maxmind.com/geoip/v2.1/country/62.219.147.28
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic Og==
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Www-Authenticate:
+      - Basic realm="geoip2"
+      Content-Length:
+      - '96'
+      Content-Type:
+      - application/vnd.maxmind.com-error+json; charset=UTF-8; version=2.1
+      Date:
+      - Fri, 22 Aug 2014 14:11:19 GMT
+    body:
+      encoding: UTF-8
+      string: '{"error":"A user ID and license key are required to use this service","code":"USER_ID_REQUIRED"}'
+    http_version: 
+  recorded_at: Fri, 22 Aug 2014 14:11:19 GMT
+recorded_with: VCR 2.9.2

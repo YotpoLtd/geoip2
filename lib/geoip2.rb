@@ -44,7 +44,7 @@ module Geoip2
     # @return an instance of Geoip2::Client
     #
     def client
-      @client ||= Geoip2::Client.new({
+      @client = Geoip2::Client.new({
           host: self.host || 'geoip.maxmind.com',
           base_path: self.base_path || '/geoip/v2.0',
           parallel_requests: self.parallel_requests || 5,

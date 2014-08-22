@@ -1,0 +1,115 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geoip.maxmind.com/geoip/v2.1/insights/0.0.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic OTIxMDk6V2FPZk1ScGc5RlU0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - Accept
+      Content-Length:
+      - '1266'
+      Content-Type:
+      - application/vnd.maxmind.com-insights+json; charset=UTF-8; version=2.1
+      Date:
+      - Fri, 15 Aug 2014 10:56:59 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb3VudHJ5Ijp7Imlzb19jb2RlIjoiTFYiLCJuYW1lcyI6eyJwdC1CUiI6
+        IkxldMO0bmlhIiwiZXMiOiJMZXRvbmlhIiwicnUiOiLQm9Cw0YLQstC40Y8i
+        LCJlbiI6IkxhdHZpYSIsInpoLUNOIjoi5ouJ6ISx57u05LqaIiwiZnIiOiJM
+        ZXR0b25pZSIsImRlIjoiTGV0dGxhbmQiLCJqYSI6IuODqeODiOODk+OCouWF
+        seWSjOWbvSJ9LCJjb25maWRlbmNlIjo5NiwiZ2VvbmFtZV9pZCI6NDU4MjU4
+        fSwibG9jYXRpb24iOnsibG9uZ2l0dWRlIjoyNC4xLCJsYXRpdHVkZSI6NTYu
+        OTUsInRpbWVfem9uZSI6IkV1cm9wZS9SaWdhIiwiYWNjdXJhY3lfcmFkaXVz
+        IjozfSwic3ViZGl2aXNpb25zIjpbeyJpc29fY29kZSI6IlJJWCIsIm5hbWVz
+        Ijp7ImVuIjoiUmlnYSIsInJ1Ijoi0KDQuNCz0LAifSwiY29uZmlkZW5jZSI6
+        NzQsImdlb25hbWVfaWQiOjQ1NjE3M31dLCJjaXR5Ijp7Im5hbWVzIjp7InB0
+        LUJSIjoiUmlnYSIsImVzIjoiUmlnYSIsInJ1Ijoi0KDQuNCz0LAiLCJlbiI6
+        IlJpZ2EiLCJ6aC1DTiI6IumHjOWKoCIsImZyIjoiUmlnYSIsImRlIjoiUmln
+        YSIsImphIjoi44Oq44KsIn0sImNvbmZpZGVuY2UiOjc0LCJnZW9uYW1lX2lk
+        Ijo0NTYxNzJ9LCJjb250aW5lbnQiOnsibmFtZXMiOnsicHQtQlIiOiJFdXJv
+        cGEiLCJlcyI6IkV1cm9wYSIsInJ1Ijoi0JXQstGA0L7Qv9CwIiwiZW4iOiJF
+        dXJvcGUiLCJ6aC1DTiI6Iuasp+a0siIsImZyIjoiRXVyb3BlIiwiZGUiOiJF
+        dXJvcGEiLCJqYSI6IuODqOODvOODreODg+ODkSJ9LCJnZW9uYW1lX2lkIjo2
+        MjU1MTQ4LCJjb2RlIjoiRVUifSwibWF4bWluZCI6eyJxdWVyaWVzX3JlbWFp
+        bmluZyI6MTQ5OTk1fSwicmVnaXN0ZXJlZF9jb3VudHJ5Ijp7Imlzb19jb2Rl
+        IjoiTFYiLCJuYW1lcyI6eyJwdC1CUiI6IkxldMO0bmlhIiwiZXMiOiJMZXRv
+        bmlhIiwicnUiOiLQm9Cw0YLQstC40Y8iLCJlbiI6IkxhdHZpYSIsInpoLUNO
+        Ijoi5ouJ6ISx57u05LqaIiwiZnIiOiJMZXR0b25pZSIsImRlIjoiTGV0dGxh
+        bmQiLCJqYSI6IuODqeODiOODk+OCouWFseWSjOWbvSJ9LCJnZW9uYW1lX2lk
+        Ijo0NTgyNTh9LCJ0cmFpdHMiOnsidXNlcl90eXBlIjoicmVzaWRlbnRpYWwi
+        LCJkb21haW4iOiJiYWx0aWNvbS5sdiIsImF1dG9ub21vdXNfc3lzdGVtX251
+        bWJlciI6MjQ2NTEsImlwX2FkZHJlc3MiOiI4My45OS4xNTkuMTkzIiwib3Jn
+        YW5pemF0aW9uIjoiQmFsdGljb20gSlNDIiwiaXNwIjoiSnNjIEJhbHRpY29t
+        IiwiYXV0b25vbW91c19zeXN0ZW1fb3JnYW5pemF0aW9uIjoiSlNDIEJBTFRJ
+        Q09NIn19
+    http_version: 
+  recorded_at: Fri, 15 Aug 2014 10:56:59 GMT
+- request:
+    method: get
+    uri: https://geoip.maxmind.com/geoip/v2.0/insights/0.0.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic Og==
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/plain
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 22 Aug 2014 13:56:43 GMT
+    body:
+      encoding: UTF-8
+      string: Not Found
+    http_version: 
+  recorded_at: Fri, 22 Aug 2014 13:56:43 GMT
+- request:
+    method: get
+    uri: https://geoip.maxmind.com/geoip/v2.0/insights/0.0.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic Og==
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/plain
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 22 Aug 2014 14:02:25 GMT
+    body:
+      encoding: UTF-8
+      string: Not Found
+    http_version: 
+  recorded_at: Fri, 22 Aug 2014 14:02:25 GMT
+recorded_with: VCR 2.9.2
