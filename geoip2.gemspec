@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov', '~> 0.9.0'
   spec.add_development_dependency 'webmock', '~> 1.18.0'
   spec.add_development_dependency 'vcr', '~> 2.9.2'
-  spec.add_development_dependency 'pry-byebug', '~> 1.3.3'
 
   spec.add_dependency 'faraday'
   spec.add_dependency 'typhoeus'
