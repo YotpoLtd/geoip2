@@ -77,8 +77,8 @@ module Geoip2
 
         conn.request :basic_auth, @user, @password
 
-        # Set the response to be rashified
-        conn.response :rashify
+        # Set the response to be mashified
+        conn.response :mashify
 
         # Setting request and response to use JSON/XML
         conn.request :json

@@ -14,7 +14,7 @@ describe Geoip2::Api::Insights, version: "2.1" do
     end
 
     it "response is Rash" do
-      expect(response).to be_a_kind_of(::Hashie::Rash)
+      expect(response).to be_a_kind_of(::Hashie::Mash)
     end
 
     it "have an iso_code in country" do
@@ -24,7 +24,7 @@ describe Geoip2::Api::Insights, version: "2.1" do
 
     it "has a names array in country" do
       expect(response.country).to include :names
-      expect(response.country.names).to be_a ::Hashie::Rash
+      expect(response.country.names).to be_a ::Hashie::Mash
     end
 
     it "has a 'en' name and it's value should be Israel" do

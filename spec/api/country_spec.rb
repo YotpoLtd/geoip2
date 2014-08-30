@@ -1,4 +1,5 @@
 require 'helper'
+
 describe Geoip2::Api::Country do
   describe '#country', version: "2.0" do
     let!(:response) do 
@@ -20,7 +21,7 @@ describe Geoip2::Api::Country do
 
     it "has a names array in country" do
       expect(response.country).to include :names
-      expect(response.country.names).to be_a ::Hashie::Rash
+      expect(response.country.names).to be_a ::Hashie::Mash
     end
 
     it "has a 'en' name and it's value should be Israel" do
