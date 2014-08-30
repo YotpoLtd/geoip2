@@ -8,7 +8,7 @@ describe Geoip2::Api::Country do
       end
     end
     
-    %i(country continent registered_country maxmind traits).each do |met|
+    [:country, :continent, :registered_country, :maxmind, :traits].each do |met|
       it "response to #{met}" do
         expect(response.respond_to?(met)).to eql(true)
       end
