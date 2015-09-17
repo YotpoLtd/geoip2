@@ -1,11 +1,23 @@
 language: ruby
+sudo: false
+cache: bundler
 rvm:
 - 1.9.3
 - 2.0.0
 - 2.1.1
 - 2.1.3
+- 2.2.0
+- ruby-head
 - rbx-2
 env:
   global:
   - secure: G4j3gaAkyJvTK4spfRaraF8u8B9MwXwpmPGO0VyLJawJlX8xsjvBG3Xl4MrMTkSw3ieV/+B3S4eq/EGGe6lO8ZqxqrSKIDXlGinZK9Z9K9+umOdPUOsu9jx49i5IMrJX7g5/n63L/9rKgoefpSeyOF2KLrImseu10xLWs5MYv/s=
   - secure: g3rD71ivDVfKya1NGGfUswZbk4kurHfyVLmZ3jAU1UEnkBF+rW8OGhhm34hIsKDTawEDTzkQao5Ek8YeQIvLT4WIsXWagbXPE/v4oq3ohDUoMndnrQywlG+msuNB9zIxCD1SAzeb88Lh4MGJPnod8cmtKVhmUjzhVKRL86QHRxE=
+deploy:
+  provider: rubygems
+  api_key:
+    secure: OHCDhtvywzcjqhOqYEdNEvoPbW+D+shnPZlBq9jJi1Om69LEfGi4qBWPMUCDurKkguSi+GhwHNph2MU4Q9ucEYCUw4WmbTtGbnTmGPgetpiRExTh33h+FFHWCcsPfkUX53vwNf5wddA6WoHnopG3Y9geNEh4dqDVeACoLa6zOfk=
+  gem: geoip2
+  on:
+    branch: master
+    repo: YotpoLtd/geoip2
