@@ -28,6 +28,7 @@ module Geoip2
       @parallel_requests = config[:parallel_requests]
       @user = config[:user_id]
       @password = config[:license_key]
+      @faraday_options = {}
     end
 
     #
@@ -74,10 +75,17 @@ module Geoip2
     # @return an instance of Faraday initialized with all that this gem needs
     def connection(faraday_options = {})
       if @faraday_options != faraday_options
-        options = {url: @base_url, parallel_manager: Typhoeus::Hydra.new(max_concurrency: @parallel_requests)}.merge(faraday_options)
         @faraday_options = faraday_options
-        @connection = Faraday.new(options) do |conn|
+        @connection = nil
+      end
 
+      @connection ||= begin
+        options = {
+          url: @base_url,
+          parallel_manager: Typhoeus::Hydra.new(max_concurrency: @parallel_requests)
+        }.merge(@faraday_options)
+
+        Faraday.new(options) do |conn|
           conn.request :basic_auth, @user, @password
 
           # Set the response to be mashified
@@ -93,7 +101,6 @@ module Geoip2
           conn.adapter :typhoeus
         end
       end
-      @connection
     end
   end
 end
