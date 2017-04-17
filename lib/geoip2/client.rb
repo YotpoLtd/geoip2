@@ -23,7 +23,7 @@ module Geoip2
     #
     # @param config [Hash] includes all of the config from the
     def initialize(config)
-      @base_url = "https://#{config[:host]}"
+      @base_url = config[:base_url] || "https://#{config[:host]}"
       @base_path = config[:base_path]
       @parallel_requests = config[:parallel_requests]
       @user = config[:user_id]
