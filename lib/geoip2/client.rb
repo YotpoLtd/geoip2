@@ -1,3 +1,4 @@
+require 'geoip2/api/insights'
 require 'geoip2/api/city'
 require 'geoip2/api/city_isp_org'
 require 'geoip2/api/country'
@@ -11,9 +12,10 @@ require 'faraday_middleware'
 module Geoip2
   class Client
 
-    include Geoip2::Api::City
-    include Geoip2::Api::Country
     include Geoip2::Api::CityIspOrg
+    include Geoip2::Api::Insights
+    include Geoip2::Api::Country
+    include Geoip2::Api::City
     include Geoip2::Api::Omni
 
     #
@@ -33,10 +35,10 @@ module Geoip2
     #
     # @param url [String] the relative path in the Geoip2 API
     # @param params [Hash] the url params that should be passed in the request
-    def get(url, params = {})
+    def get(url, params = {}, faraday_options = {})
       params = params.inject({}){|memo,(k,v)| memo[k.to_s] = v; memo}
       preform(@base_path + url, :get, params: params) do
-        return connection.get(@base_path + url, params) do |req| 
+        return connection.get(@base_path + url, params) do |req|
             req.options[:timeout] = 2
         end.body
       end
@@ -72,23 +74,28 @@ module Geoip2
 
     #
     # @return an instance of Faraday initialized with all that this gem needs
-    def connection
-      @connection ||= Faraday.new(url: @base_url, parallel_manager: Typhoeus::Hydra.new(max_concurrency: @parallel_requests)) do |conn|
+    def connection(faraday_options = {})
+      if @faraday_options != faraday_options
+        options = {url: @base_url, parallel_manager: Typhoeus::Hydra.new(max_concurrency: @parallel_requests)}.merge(faraday_options)
+        @faraday_options = faraday_options
+        @connection = Faraday.new(options) do |conn|
 
-        conn.request :basic_auth, @user, @password
+          conn.request :basic_auth, @user, @password
 
-        # Set the response to be rashified
-        conn.response :rashify
+          # Set the response to be mashified
+          conn.response :mashify
 
-        # Setting request and response to use JSON/XML
-        conn.request :json
-        conn.response :json
+          # Setting request and response to use JSON/XML
+          conn.request :json
+          conn.response :json
 
-        # Set to use instrumentals to get time logs
-        conn.use :instrumentation
+          # Set to use instrumentals to get time logs
+          conn.use :instrumentation
 
-        conn.adapter :typhoeus
+          conn.adapter :typhoeus
+        end
       end
+      @connection
     end
   end
 end

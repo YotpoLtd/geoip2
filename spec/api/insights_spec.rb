@@ -1,10 +1,9 @@
 require 'helper'
-
-describe Geoip2::Api::Country do
-  describe '#country', version: "2.0" do
+describe Geoip2::Api::Insights, version: "2.1" do
+  describe '#insights'do  
     let!(:response) do 
-      VCR.use_cassette('get_country') do
-        Geoip2.country('62.219.147.28')
+      VCR.use_cassette('insights') do
+        Geoip2.insights('0.0.0.0')
       end
     end
     
@@ -14,9 +13,13 @@ describe Geoip2::Api::Country do
       end
     end
 
+    it "response is Rash" do
+      expect(response).to be_a_kind_of(::Hashie::Mash)
+    end
+
     it "have an iso_code in country" do
       expect(response.country).to include :iso_code
-      expect(response.country.iso_code).to eq 'IL'
+      expect(response.country.iso_code).to eq 'LV'
     end
 
     it "has a names array in country" do
@@ -25,12 +28,13 @@ describe Geoip2::Api::Country do
     end
 
     it "has a 'en' name and it's value should be Israel" do
-      expect(response.country.names.en).to eq 'Israel'
+      expect(response.country.names.en).to eq 'Latvia'
     end
 
     it "has a queries_remaining value in maxmind" do
       expect(response.maxmind).to include :queries_remaining
-      expect(response.maxmind.queries_remaining).to eq 995
+      expect(response.maxmind.queries_remaining).to eq 149995
     end
+
   end
 end

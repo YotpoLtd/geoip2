@@ -46,7 +46,7 @@ module Geoip2
     def client
       @client ||= Geoip2::Client.new({
           host: self.host || 'geoip.maxmind.com',
-          base_path: self.base_path || '/geoip/v2.0',
+          base_path: self.base_path || '/geoip/v2.1',
           parallel_requests: self.parallel_requests || 5,
           user_id: self.user_id,
           license_key: self.license_key
@@ -54,12 +54,17 @@ module Geoip2
     end
 
     private
+    attr_reader :geoip_client
 
     #
     # executes any function on the Geoip2::Client instance
     #
     # @param args [*] any argument that we want to pass to the client function
     # @param block [Block] any block that is passed to the client function
+    def reset_client
+      @client = nil
+    end
+
     def method_missing(method_name, *args, &block)
       return super unless client.respond_to?(method_name)
       client.send(method_name, *args, &block)
